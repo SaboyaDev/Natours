@@ -51,6 +51,7 @@ html {
 
 body {
   box-sizing: border-box;
+  background-color: #f7f7f7;
 }
 
 body {
@@ -81,6 +82,51 @@ body {
   letter-spacing: 1.75rem;
   margin-right: -1.75rem;
   animation: fadein-right 1s ease-out;
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
 }
 
 .btn:link, .btn:visited {
@@ -130,7 +176,6 @@ body {
 
 .row {
   max-width: 114rem;
-  background-color: #eee;
   margin: 0 auto;
 }
 .row:not(:last-child) {
@@ -142,7 +187,6 @@ body {
   clear: both;
 }
 .row [class^=col-] {
-  background-color: orangered;
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
@@ -175,10 +219,10 @@ body {
 
 .header {
   position: relative;
-  height: 95vh;
+  height: 25vh;
   background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
 }
 .header__logo-box {
   position: absolute;
@@ -194,6 +238,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.section-about {
+  padding: 25rem 0;
+  margin-top: -20vh;
 }
 
 /*# sourceMappingURL=style.css.map */
