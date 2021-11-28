@@ -1,0 +1,13 @@
+@mixin clearfix {
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin btn-base {
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline-block;
+}

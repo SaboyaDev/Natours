@@ -102,7 +102,6 @@ body {
 
 .heading-tertiary {
   font-size: 1.6rem;
-  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -172,6 +171,27 @@ body {
 .btn--fade-up {
   animation: fadein-bottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
+}
+
+.btn-text:link, .btn-text:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #55c57a;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  font-size: 1.6rem;
+  transition: all 0.2s;
+}
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn-text:active {
+  transform: translateY(1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .row {

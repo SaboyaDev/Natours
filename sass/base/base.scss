@@ -1,3 +1,5 @@
+@use '../abstracts';
+
 *,
 *::before,
 *::after {
@@ -15,5 +17,5 @@ html {
 
 body {
 	box-sizing: border-box;
-	background-color: $color-grey-light-1;
+	background-color: abstracts.$color-grey-light-1;
 }
