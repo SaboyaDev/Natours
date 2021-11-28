@@ -194,6 +194,38 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+.composition__photo--1 {
+  left: 0;
+  top: -2rem;
+}
+.composition__photo--2 {
+  right: 0;
+  top: 2rem;
+}
+.composition__photo--3 {
+  left: 20%;
+  top: 10rem;
+}
+.composition__photo:hover {
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -239,7 +271,7 @@ body {
 
 .header {
   position: relative;
-  height: 25vh;
+  height: 95vh;
   background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);

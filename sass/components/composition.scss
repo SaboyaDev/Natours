@@ -1,0 +1,36 @@
+@use '../abstracts';
+
+.composition {
+	position: relative;
+
+	&__photo {
+		width: 55%;
+		box-shadow: 0 1.5rem 4rem rgba(abstracts.$color-black, 0.4);
+		border-radius: 5px;
+		position: absolute;
+		z-index: 2;
+		transition: all 0.5s ease-in-out;
+
+		&--1 {
+			left: 0;
+			top: -2rem;
+		}
+		&--2 {
+			right: 0;
+			top: 2rem;
+		}
+		&--3 {
+			left: 20%;
+			top: 10rem;
+		}
+
+		&:hover {
+			transform: scale(1.05) translateY(-0.5rem);
+			box-shadow: 0 2.5rem 4rem rgba(abstracts.$color-black, 0.4);
+			z-index: 3;
+		}
+	}
+	&:hover &__photo:not(:hover) {
+		transform: scale(0.95);
+	}
+}
