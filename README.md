@@ -1,2 +1,2 @@
 # Natours
-#  https://saboyadev.github.io/Natours/
+# https://nifty-hamilton-f3e370.netlify.app
