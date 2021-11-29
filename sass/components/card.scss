@@ -6,13 +6,16 @@
 	height: 50rem;
 
 	&__side {
-		transition: transform 1s ease;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		border-radius: abstracts.$small-border-radius;
+		box-shadow: 0 1.5rem 4rem rgba(abstracts.$color-black, 0.15);
 		backface-visibility: hidden;
+		overflow: hidden;
+		transition: transform 1s ease;
 
 		&--front {
 			background-color: abstracts.$color-white;
@@ -49,5 +52,39 @@
 	}
 	&:hover &__side--back {
 		transform: rotateY(0);
+	}
+
+	&__picture {
+		// background-size: cover;
+		height: 23rem;
+		background-blend-mode: screen;
+
+		&--1 {
+			background: linear-gradient(
+					to right bottom,
+					abstracts.$color-secondary-light,
+					abstracts.$color-secondary-dark
+				),
+				url('../../img/nat-5.jpg');
+			background-size: cover;
+		}
+		&--2 {
+			background: linear-gradient(
+					to right bottom,
+					abstracts.$color-primary-light,
+					abstracts.$color-primary-dark
+				),
+				url('../../img/nat-6.jpg');
+			background-size: cover;
+		}
+		&--3 {
+			background: linear-gradient(
+					to right bottom,
+					abstracts.$color-tertiary-light,
+					abstracts.$color-tertiary-dark
+				),
+				url('../../img/nat-7.jpg');
+			background-size: cover;
+		}
 	}
 }
