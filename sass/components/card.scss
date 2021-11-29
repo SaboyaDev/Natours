@@ -1,36 +1,51 @@
+@use '../abstracts';
+
 .card {
 	perspective: 150rem;
 	position: relative;
 	height: 50rem;
 
 	&__side {
-		height: 50rem;
 		transition: transform 1s ease;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
+		height: 100%;
 		backface-visibility: hidden;
 
 		&--front {
-			background-color: white;
-			color: black;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			background-color: abstracts.$color-white;
 		}
 		&--back {
-			background-color: black;
-			color: white;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			transform: rotateY(180deg);
+
+			&-1 {
+				background-image: linear-gradient(
+					to right bottom,
+					abstracts.$color-secondary-light,
+					abstracts.$color-secondary-dark
+				);
+			}
+			&-2 {
+				background-image: linear-gradient(
+					to right bottom,
+					abstracts.$color-primary-light,
+					abstracts.$color-primary-dark
+				);
+			}
+			&-3 {
+				background-image: linear-gradient(
+					to right bottom,
+					abstracts.$color-tertiary-light,
+					abstracts.$color-tertiary-dark
+				);
+			}
 		}
 	}
 
 	&:hover &__side--front {
-		transform: rotateY(180deg);
+		transform: rotateY(-180deg);
 	}
 	&:hover &__side--back {
 		transform: rotateY(0);
