@@ -35,14 +35,11 @@ body {
 	font-size: 3.5rem;
 	text-transform: uppercase;
 	font-weight: 700;
-	background-image: linear-gradient(
-		to right,
+	@include abstracts.text-gradient(
+		right,
 		abstracts.$color-primary-light,
 		abstracts.$color-primary-dark
 	);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
 	letter-spacing: 0.2rem;
 	transition: all 0.2s;
 

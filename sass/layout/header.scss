@@ -3,13 +3,7 @@
 .header {
 	position: relative;
 	height: 95vh;
-	background-image: linear-gradient(
-			to right,
-			rgba(abstracts.$color-primary-light, 0.8),
-			rgba(abstracts.$color-primary-dark, 0.8)
-		),
-		url(../img/hero.jpg);
-	background-size: cover;
+	@include abstracts.bg-img-gradient(url(../img/hero.jpg));
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
 
 	&__logo-box {

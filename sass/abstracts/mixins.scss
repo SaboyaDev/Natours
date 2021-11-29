@@ -1,3 +1,5 @@
+@use '../abstracts/variables';
+
 @mixin clearfix {
 	&::after {
 		content: '';
@@ -10,4 +12,22 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	display: inline-block;
+}
+
+@mixin bg-img-gradient($url) {
+	background-image: linear-gradient(
+			to right,
+			rgba(variables.$color-primary-light, 0.8),
+			rgba(variables.$color-primary-dark, 0.8)
+		),
+		$url;
+	background-size: cover;
+}
+
+@mixin text-gradient($direction, $col-1, $col-2) {
+	display: inline-block;
+	background-image: linear-gradient(to $direction, $col-1, $col-2);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
 }
