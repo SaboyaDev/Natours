@@ -6,8 +6,13 @@
 }
 
 .section-features {
+	margin-top: -10rem;
 	position: relative;
 	padding: 20rem 0;
 	@include abstracts.bg-img-gradient(url(../img/nat-4.jpg));
-	// transform: skewY(-11deg);
+	transform: skewY(-7deg);
+
+	& > * {
+		transform: skewY(7deg);
+	}
 }
