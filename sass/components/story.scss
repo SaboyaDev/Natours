@@ -23,6 +23,9 @@
 
 	&__img {
 		height: 100%;
+		backface-visibility: hidden;
+		transform: translateX(-4rem) scale(1.4);
+		transition: all 0.5s ease;
 	}
 
 	&__text {
@@ -39,7 +42,7 @@
 		color: abstracts.$color-white;
 		text-transform: uppercase;
 		opacity: 0;
-		transition: all 0.2s ease;
+		transition: all 0.5s ease;
 		backface-visibility: hidden;
 	}
 
@@ -50,5 +53,6 @@
 
 	&:hover &__img {
 		filter: blur(0.4rem) brightness(60%);
+		transform: translateX(-4rem) scale(1);
 	}
 }
