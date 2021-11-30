@@ -88,7 +88,7 @@
 			background-size: cover;
 		}
 	}
-
+	// FRONT SIDE STYLING
 	&__heading {
 		width: 60%;
 		font-size: 2.8rem;
@@ -126,6 +126,7 @@
 			);
 		}
 	}
+	// FRONT SIDE STYLING
 	&__details {
 		ul {
 			width: 65%;
@@ -142,6 +143,31 @@
 					border-bottom: 3px solid abstracts.$color-grey-light-2;
 				}
 			}
+		}
+	}
+	// **************************************
+	// BACK SIDE STYLING
+	&__cta {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	&__price {
+		&-box {
+			color: abstracts.$color-white;
+			margin-bottom: 8rem;
+		}
+		&-only {
+			font-size: 1.7rem;
+			text-transform: uppercase;
+		}
+		&-value {
+			font-size: 6rem;
+			font-weight: 100;
 		}
 	}
 }
