@@ -1,0 +1,54 @@
+@use '../abstracts';
+
+.story {
+	width: 75%;
+	margin: 0 auto 10rem;
+	box-shadow: 0 3rem 6rem rgba(abstracts.$color-black, 0.1);
+	background-color: rgba(abstracts.$color-white, 0.5);
+	border-radius: abstracts.$small-border-radius;
+	padding: 6rem;
+	padding-left: 9rem;
+	font-size: abstracts.$default-font-size;
+	transform: skewX(-12deg);
+
+	&__shape {
+		float: left;
+		width: 15rem;
+		height: 15rem;
+		shape-outside: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%);
+		transform: translateX(-3rem) skewX(12deg);
+		position: relative;
+	}
+
+	&__img {
+		height: 100%;
+	}
+
+	&__text {
+		transform: skewX(12deg);
+	}
+
+	&__caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 20%);
+		text-align: center;
+		font-size: 1.7rem;
+		color: abstracts.$color-white;
+		text-transform: uppercase;
+		opacity: 0;
+		transition: all 0.2s ease;
+		backface-visibility: hidden;
+	}
+
+	&:hover &__caption {
+		transform: translate(-50%, -50%);
+		opacity: 100%;
+	}
+
+	&:hover &__img {
+		filter: blur(0.4rem) brightness(60%);
+	}
+}
