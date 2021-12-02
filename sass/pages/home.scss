@@ -23,6 +23,7 @@
 }
 
 .section-stories {
+	position: relative;
 	padding: 15rem 0;
-	background-color: grey;
+	background-color: rgba(abstracts.$color-black, 0.7);
 }

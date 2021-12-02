@@ -4,7 +4,7 @@
 	width: 75%;
 	margin: 0 auto 10rem;
 	box-shadow: 0 3rem 6rem rgba(abstracts.$color-black, 0.1);
-	background-color: rgba(abstracts.$color-white, 0.5);
+	background-color: rgba(abstracts.$color-white, 1);
 	border-radius: abstracts.$small-border-radius;
 	padding: 6rem;
 	padding-left: 9rem;
@@ -16,20 +16,25 @@
 		width: 15rem;
 		height: 15rem;
 		shape-outside: circle(50% at 50% 50%);
-		clip-path: circle(50% at 50% 50%);
-		transform: translateX(-3rem) skewX(12deg);
+		transform: translateX(-2rem) skewX(12deg);
 		position: relative;
+		border-radius: 50%;
+		overflow: hidden;
+		backface-visibility: hidden;
 	}
 
 	&__img {
+		position: absolute;
 		height: 100%;
-		backface-visibility: hidden;
-		transform: translateX(-4rem) scale(1.4);
+		border-radius: 50%;
+		transform: translateX(-3rem) scale(1.4);
 		transition: all 0.5s ease;
+		backface-visibility: hidden;
 	}
 
 	&__text {
 		transform: skewX(12deg);
+		backface-visibility: hidden;
 	}
 
 	&__caption {
@@ -42,17 +47,19 @@
 		color: abstracts.$color-white;
 		text-transform: uppercase;
 		opacity: 0;
-		transition: all 0.5s ease;
+		transition: all 0.1s ease;
 		backface-visibility: hidden;
 	}
 
 	&:hover &__caption {
 		transform: translate(-50%, -50%);
 		opacity: 100%;
+		backface-visibility: hidden;
 	}
 
 	&:hover &__img {
 		filter: blur(0.4rem) brightness(60%);
-		transform: translateX(-4rem) scale(1);
+		transform: translateX(-3rem) scale(1);
+		backface-visibility: hidden;
 	}
 }
