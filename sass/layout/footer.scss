@@ -1,0 +1,58 @@
+@use '../abstracts';
+
+.footer {
+	background-color: abstracts.$color-grey-dark-3;
+	padding: 10rem 0;
+	font-size: abstracts.$small-font-size;
+	color: abstracts.$color-grey-light-1;
+
+	&__logo-box {
+		text-align: center;
+	}
+
+	&__logo {
+		width: 15rem;
+		height: auto;
+	}
+
+	// NAVIGATION
+	&__navigation,
+	&__copyright {
+		display: inline-block;
+		border-top: 0.1rem solid abstracts.$color-grey-dark;
+		padding-top: 2rem;
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 1.5rem;
+		}
+	}
+
+	&__link {
+		&:link,
+		&:visited {
+			color: abstracts.$color-grey-light-1;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+		}
+
+		&:hover,
+		&:active {
+			color: abstracts.$color-primary;
+			box-shadow: 0 1rem 2rem rgba(abstracts.$color-black, 0.4);
+			transform: rotate(5deg) scale(1.3);
+		}
+	}
+
+	&__copyright {
+		float: right;
+	}
+}
