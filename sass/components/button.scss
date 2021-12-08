@@ -1,6 +1,7 @@
 @use '../abstracts';
 
 .btn {
+	&,
 	&:link,
 	&:visited {
 		@include abstracts.btn-base;
@@ -8,6 +9,9 @@
 		border-radius: abstracts.$defautl-border-radius;
 		position: relative;
 		font-size: abstracts.$default-font-size;
+
+		border: none;
+		cursor: pointer;
 	}
 
 	&:hover {
@@ -20,7 +24,9 @@
 		}
 	}
 
-	&:active {
+	&:active,
+	&:focus {
+		outline: none;
 		transform: translateY(-0.1rem);
 		box-shadow: abstracts.$btn-shadow-after;
 	}
