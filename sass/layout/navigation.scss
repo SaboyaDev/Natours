@@ -1,0 +1,35 @@
+@use '../abstracts';
+
+.navigation {
+	&__checkbox {
+	}
+
+	&__button {
+	}
+
+	&__background {
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+		position: fixed;
+		top: 6.5rem;
+		right: 6.5rem;
+		background-image: radial-gradient(
+			abstracts.$color-primary-light,
+			abstracts.$color-primary-dark
+		);
+		z-index: 1000;
+	}
+
+	&__nav {
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+
+	&__link {
+	}
+}
