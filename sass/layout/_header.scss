@@ -1,9 +1,9 @@
-@use '../abstracts';
+@use '../abstracts/mixins' as mix;
 
 .header {
 	position: relative;
 	height: 95vh;
-	@include abstracts.bg-img-gradient(url(../img/hero.jpg));
+	@include mix.bg-img-gradient(url(../img/hero.jpg));
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
 
 	&__logo-box {
@@ -17,6 +17,6 @@
 	}
 
 	&__text-box {
-		@include abstracts.center-ver-hor;
+		@include mix.center-ver-hor;
 	}
 }

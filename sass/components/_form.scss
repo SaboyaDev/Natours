@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../abstracts/variables' as var;
 
 .form {
 	&__group:not(:last-child) {
@@ -11,26 +11,26 @@
 		font-family: inherit;
 		color: inherit;
 		padding: 1.5rem 2rem;
-		border-radius: abstracts.$small-border-radius;
-		background-color: rgba(abstracts.$color-white, 0.5);
+		border-radius: var.$small-border-radius;
+		background-color: rgba(var.$color-white, 0.5);
 		border: none;
 		border-bottom: 0.3rem solid transparent;
 		width: 90%;
 		display: block;
-		transition: all abstracts.$normal-transition-speed;
+		transition: all var.$normal-transition-speed;
 
 		&:focus {
 			outline: none;
-			box-shadow: 0 1rem 2rem rgba(abstracts.$color-black, 0.1);
-			border-bottom: 0.3rem solid abstracts.$color-primary;
+			box-shadow: 0 1rem 2rem rgba(var.$color-black, 0.1);
+			border-bottom: 0.3rem solid var.$color-primary;
 		}
 
 		&:focus:invalid {
-			border-bottom: 0.3rem solid abstracts.$color-secondary-dark;
+			border-bottom: 0.3rem solid var.$color-secondary-dark;
 		}
 
 		&::-webkit-input-placeholder {
-			color: abstracts.$color-grey-dark-2;
+			color: var.$color-grey-dark-2;
 		}
 	}
 	&__label {
@@ -39,7 +39,7 @@
 		margin-left: 2rem;
 		margin-top: 0.7rem;
 		display: block;
-		transition: all abstracts.$normal-transition-speed;
+		transition: all var.$normal-transition-speed;
 	}
 
 	// INITIAL STATE
@@ -59,7 +59,7 @@
 	}
 
 	&__radio-label {
-		font-size: abstracts.$default-font-size;
+		font-size: var.$default-font-size;
 		cursor: pointer;
 		position: relative;
 		padding-left: 4.5rem;
@@ -68,7 +68,7 @@
 	&__radio-button {
 		height: 3rem;
 		width: 3rem;
-		border: 0.5rem solid abstracts.$color-primary;
+		border: 0.5rem solid var.$color-primary;
 		border-radius: 50%;
 		display: inline-block;
 		position: absolute;
@@ -79,7 +79,7 @@
 			content: '';
 			height: 1.2rem;
 			width: 1.2rem;
-			background-color: abstracts.$color-primary;
+			background-color: var.$color-primary;
 			border-radius: 50%;
 			display: inline-block;
 			position: absolute;
@@ -87,7 +87,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			opacity: 0;
-			transition: opacity abstracts.$normal-transition-speed;
+			transition: opacity var.$normal-transition-speed;
 		}
 	}
 

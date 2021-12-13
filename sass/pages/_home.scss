@@ -1,4 +1,5 @@
-@use '../abstracts';
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
 
 .section-about {
 	padding: 25rem 0;
@@ -9,7 +10,7 @@
 	margin-top: -10rem;
 	position: relative;
 	padding: 20rem 0;
-	@include abstracts.bg-img-gradient(url(../img/nat-4.jpg));
+	@include mix.bg-img-gradient(url(../img/nat-4.jpg));
 	transform: skewY(-7deg);
 
 	& > * {
@@ -25,30 +26,30 @@
 .section-stories {
 	position: relative;
 	padding: 15rem 0;
-	background-color: rgba(abstracts.$color-black, 0.7);
+	background-color: rgba(var.$color-black, 0.7);
 }
 
 .section-booking {
 	padding: 15rem 0;
 	background-image: linear-gradient(
 		to right bottom,
-		abstracts.$color-primary-light,
-		abstracts.$color-primary-dark
+		var.$color-primary-light,
+		var.$color-primary-dark
 	);
 }
 
 .booking {
 	background-image: linear-gradient(
 			105deg,
-			rgba(abstracts.$color-white, 0.9) 0%,
-			rgba(abstracts.$color-white, 0.9) 50%,
+			rgba(var.$color-white, 0.9) 0%,
+			rgba(var.$color-white, 0.9) 50%,
 			transparent 50%
 		),
 		url('../../img/nat-10.jpg');
 	background-size: 100%;
 	height: 50rem;
-	border-radius: abstracts.$small-border-radius;
-	box-shadow: 0 1.5rem 4rem rgba(abstracts.$color-black, 0.3);
+	border-radius: var.$small-border-radius;
+	box-shadow: 0 1.5rem 4rem rgba(var.$color-black, 0.3);
 
 	&__form {
 		width: 50%;

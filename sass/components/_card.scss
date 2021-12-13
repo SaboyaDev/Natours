@@ -1,4 +1,5 @@
-@use '../abstracts';
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
 
 .card {
 	perspective: 150rem;
@@ -11,14 +12,14 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		border-radius: abstracts.$small-border-radius;
-		box-shadow: 0 1.5rem 4rem rgba(abstracts.$color-black, 0.15);
+		border-radius: var.$small-border-radius;
+		box-shadow: 0 1.5rem 4rem rgba(var.$color-black, 0.15);
 		backface-visibility: hidden;
 		overflow: hidden;
 		transition: transform 1s ease;
 
 		&--front {
-			background-color: abstracts.$color-white;
+			background-color: var.$color-white;
 		}
 		&--back {
 			transform: rotateY(180deg);
@@ -26,22 +27,22 @@
 			&-1 {
 				background-image: linear-gradient(
 					to right bottom,
-					abstracts.$color-secondary-light,
-					abstracts.$color-secondary-dark
+					var.$color-secondary-light,
+					var.$color-secondary-dark
 				);
 			}
 			&-2 {
 				background-image: linear-gradient(
 					to right bottom,
-					abstracts.$color-primary-light,
-					abstracts.$color-primary-dark
+					var.$color-primary-light,
+					var.$color-primary-dark
 				);
 			}
 			&-3 {
 				background-image: linear-gradient(
 					to right bottom,
-					abstracts.$color-tertiary-light,
-					abstracts.$color-tertiary-dark
+					var.$color-tertiary-light,
+					var.$color-tertiary-dark
 				);
 			}
 		}
@@ -63,8 +64,8 @@
 		&--1 {
 			background: linear-gradient(
 					to right bottom,
-					abstracts.$color-secondary-light,
-					abstracts.$color-secondary-dark
+					var.$color-secondary-light,
+					var.$color-secondary-dark
 				),
 				url('../../img/nat-5.jpg');
 			background-size: cover;
@@ -72,8 +73,8 @@
 		&--2 {
 			background: linear-gradient(
 					to right bottom,
-					abstracts.$color-primary-light,
-					abstracts.$color-primary-dark
+					var.$color-primary-light,
+					var.$color-primary-dark
 				),
 				url('../../img/nat-6.jpg');
 			background-size: cover;
@@ -81,8 +82,8 @@
 		&--3 {
 			background: linear-gradient(
 					to right bottom,
-					abstracts.$color-tertiary-light,
-					abstracts.$color-tertiary-dark
+					var.$color-tertiary-light,
+					var.$color-tertiary-dark
 				),
 				url('../../img/nat-7.jpg');
 			background-size: cover;
@@ -95,7 +96,7 @@
 		font-weight: 300;
 		text-align: right;
 		text-transform: uppercase;
-		color: abstracts.$color-white;
+		color: var.$color-white;
 		position: absolute;
 		top: 12rem;
 		right: 2rem;
@@ -107,22 +108,22 @@
 		&--1 {
 			background-image: linear-gradient(
 				to right bottom,
-				rgba(abstracts.$color-secondary-light, 0.85),
-				rgba(abstracts.$color-secondary-dark, 0.85)
+				rgba(var.$color-secondary-light, 0.85),
+				rgba(var.$color-secondary-dark, 0.85)
 			);
 		}
 		&--2 {
 			background-image: linear-gradient(
 				to right bottom,
-				rgba(abstracts.$color-primary-light, 0.85),
-				rgba(abstracts.$color-primary-dark, 0.85)
+				rgba(var.$color-primary-light, 0.85),
+				rgba(var.$color-primary-dark, 0.85)
 			);
 		}
 		&--3 {
 			background-image: linear-gradient(
 				to right bottom,
-				rgba(abstracts.$color-tertiary-light, 0.85),
-				rgba(abstracts.$color-tertiary-dark, 0.85)
+				rgba(var.$color-tertiary-light, 0.85),
+				rgba(var.$color-tertiary-dark, 0.85)
 			);
 		}
 	}
@@ -140,7 +141,7 @@
 				padding: 1rem;
 
 				&:not(:last-child) {
-					border-bottom: 3px solid abstracts.$color-grey-light-2;
+					border-bottom: 3px solid var.$color-grey-light-2;
 				}
 			}
 		}
@@ -150,12 +151,12 @@
 	&__cta {
 		width: 100%;
 		position: absolute;
-		@include abstracts.center-ver-hor;
+		@include mix.center-ver-hor;
 	}
 
 	&__price {
 		&-box {
-			color: abstracts.$color-white;
+			color: var.$color-white;
 			margin-bottom: 8rem;
 		}
 		&-only {

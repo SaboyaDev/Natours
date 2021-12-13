@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../abstracts/variables' as var;
 
 *,
 *::before,
@@ -17,5 +17,5 @@ html {
 
 body {
 	box-sizing: border-box;
-	background-color: abstracts.$color-grey-light-1;
+	background-color: var.$color-grey-light-1;
 }

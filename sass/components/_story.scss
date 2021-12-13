@@ -1,14 +1,14 @@
-@use '../abstracts';
+@use '../abstracts/variables' as var;
 
 .story {
 	width: 75%;
 	margin: 0 auto 10rem;
-	box-shadow: 0 3rem 6rem rgba(abstracts.$color-black, 0.1);
-	background-color: rgba(abstracts.$color-white, 1);
-	border-radius: abstracts.$small-border-radius;
+	box-shadow: 0 3rem 6rem rgba(var.$color-black, 0.1);
+	background-color: rgba(var.$color-white, 1);
+	border-radius: var.$small-border-radius;
 	padding: 6rem;
 	padding-left: 9rem;
-	font-size: abstracts.$default-font-size;
+	font-size: var.$default-font-size;
 	transform: skewX(-12deg);
 
 	&__shape {
@@ -44,7 +44,7 @@
 		transform: translate(-50%, 20%);
 		text-align: center;
 		font-size: 1.7rem;
-		color: abstracts.$color-white;
+		color: var.$color-white;
 		text-transform: uppercase;
 		opacity: 0;
 		transition: all 0.1s ease;

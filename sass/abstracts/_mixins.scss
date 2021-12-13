@@ -1,4 +1,4 @@
-@use '../abstracts/variables';
+@use 'variables' as var;
 
 @mixin clearfix {
 	&::after {
@@ -17,8 +17,8 @@
 @mixin bg-img-gradient($url) {
 	background-image: linear-gradient(
 			to right,
-			rgba(variables.$color-primary-light, 0.8),
-			rgba(variables.$color-primary-dark, 0.8)
+			rgba(var.$color-primary-light, 0.8),
+			rgba(var.$color-primary-dark, 0.8)
 		),
 		$url;
 	background-size: cover;

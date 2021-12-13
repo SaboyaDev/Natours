@@ -1,5 +1,28 @@
-@forward 'abstracts';
-@forward 'base';
-@forward 'components';
-@forward 'layout';
-@forward 'pages';
+// ABSTRACTS
+@forward 'abstracts/animations';
+@forward 'abstracts/functions';
+@forward 'abstracts/mixins';
+@forward 'abstracts/variables';
+
+// BASE
+@forward 'base/base';
+@forward 'base/typography';
+@forward 'base/utilities';
+
+// COMPONENTS
+@forward 'components/bg-video';
+@forward 'components/button';
+@forward 'components/card';
+@forward 'components/composition';
+@forward 'components/feature-box';
+@forward 'components/form';
+@forward 'components/story';
+
+// LAYOUT
+@forward 'layout/footer';
+@forward 'layout/grid';
+@forward 'layout/header';
+@forward 'layout/navigation';
+
+// PAGES
+@forward 'pages/home';

@@ -1,4 +1,4 @@
-@use '../abstracts';
+@use '../abstracts/variables' as var;
 
 .navigation {
 	&__checkbox {
@@ -15,10 +15,10 @@
 		top: 6.5rem;
 		right: 6.5rem;
 		background-image: radial-gradient(
-			abstracts.$color-primary-light,
-			abstracts.$color-primary-dark
+			var.$color-primary-light,
+			var.$color-primary-dark
 		);
-		z-index: 1000;
+		z-index: 2;
 	}
 
 	&__nav {
