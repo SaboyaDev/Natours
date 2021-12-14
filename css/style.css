@@ -47,6 +47,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -477,6 +478,73 @@ body {
   opacity: 1;
 }
 
+.popup {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.popup__content {
+  background-color: #fff;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75%;
+  transform: translate(-50%, -50%) scale(0.25);
+  opacity: 0;
+  transition: all 0.5s 0.1s;
+}
+.popup__left {
+  width: 33.33333%;
+  display: table-cell;
+}
+.popup__right {
+  width: 66.66667%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3rem 5rem;
+}
+.popup__img {
+  display: block;
+  width: 100%;
+}
+.popup__text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 1px solid #eee;
+  hyphens: auto;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup:target .popup__content {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.popup__close:link, .popup__close:visited {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  display: inline-block;
+  font-size: 3rem;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.2s;
+}
+.popup__close:link:hover, .popup__close:visited:hover {
+  color: #55c57a;
+}
+
 .story {
   width: 75%;
   margin: 0 auto 10rem;
@@ -683,8 +751,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   width: 100%;
+  text-align: center;
 }
 .navigation__item {
   list-style: none;
@@ -716,7 +784,7 @@ body {
 }
 .navigation__icon {
   position: relative;
-  top: 3.5rem;
+  margin-top: 3.5rem;
 }
 .navigation__icon, .navigation__icon::before, .navigation__icon::after {
   display: inline-block;

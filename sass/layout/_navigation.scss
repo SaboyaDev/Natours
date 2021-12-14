@@ -48,6 +48,7 @@
 	&__list {
 		@include mix.center-ver-hor;
 		width: 100%;
+		text-align: center;
 	}
 
 	&__item {
@@ -96,7 +97,7 @@
 	// ICON
 	&__icon {
 		position: relative;
-		top: 3.5rem;
+		margin-top: 3.5rem;
 
 		&,
 		&::before,
@@ -122,9 +123,6 @@
 
 		&::after {
 			top: 0.8rem;
-		}
-
-		&:hover {
 		}
 	}
 

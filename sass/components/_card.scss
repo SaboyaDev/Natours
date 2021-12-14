@@ -152,6 +152,7 @@
 		width: 100%;
 		position: absolute;
 		@include mix.center-ver-hor;
+		text-align: center;
 	}
 
 	&__price {

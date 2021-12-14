@@ -1,0 +1,83 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+.popup {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(var.$color-black, 0.9);
+	z-index: 40;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+
+	&__content {
+		// @include mix.center-ver-hor;
+		background-color: var.$color-white;
+		box-shadow: 0 2rem 4rem rgba(var.$color-black, 0.2);
+		border-radius: var.$small-border-radius;
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 75%;
+		// INITIAL STATE
+		transform: translate(-50%, -50%) scale(0.25);
+		opacity: 0;
+		transition: all 0.5s 0.1s;
+	}
+
+	&__left {
+		width: 33.33333%;
+		display: table-cell;
+	}
+
+	&__right {
+		width: 66.66667%;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 3rem 5rem;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		margin-bottom: 4rem;
+		column-count: 2;
+		column-gap: 4rem;
+		column-rule: 1px solid var.$color-grey-light-2;
+		hyphens: auto;
+	}
+
+	// POPUP OPEN STATES
+	&:target {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&:target &__content {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+
+	&__close {
+		&:link,
+		&:visited {
+			position: absolute;
+			top: 2.5rem;
+			right: 2.5rem;
+			display: inline-block;
+			font-size: 3rem;
+			text-decoration: none;
+			line-height: 1;
+			transition: all 0.2s;
+
+			&:hover {
+				color: var.$color-primary;
+			}
+		}
+	}
+}

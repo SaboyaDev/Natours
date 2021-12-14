@@ -18,5 +18,6 @@
 
 	&__text-box {
 		@include mix.center-ver-hor;
+		text-align: center;
 	}
 }
