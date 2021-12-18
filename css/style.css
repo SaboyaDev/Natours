@@ -34,6 +34,13 @@
     transform: translateY(0);
   }
 }
+/*
+	0 = 600px;			PHONE
+	600 - 900px;		TABLET PORTRAIT
+	900 - 1200px;		TABLET LANDSCAPE
+	[1200 - 1800px] NORMAL STYLE IS APPLIED
+	1800px - + 			BIG DESKTOP
+*/
 *,
 *::before,
 *::after {
