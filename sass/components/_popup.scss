@@ -66,6 +66,7 @@
 	&__close {
 		&:link,
 		&:visited {
+			@include mix.link-tags-reset;
 			position: absolute;
 			top: 2.5rem;
 			right: 2.5rem;

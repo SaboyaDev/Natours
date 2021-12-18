@@ -43,3 +43,8 @@
 	top: 0;
 	left: 0;
 }
+
+@mixin link-tags-reset {
+	text-decoration: none;
+	color: inherit;
+}

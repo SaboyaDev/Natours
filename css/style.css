@@ -532,6 +532,8 @@ body {
   opacity: 1;
 }
 .popup__close:link, .popup__close:visited {
+  text-decoration: none;
+  color: inherit;
   position: absolute;
   top: 2.5rem;
   right: 2.5rem;
