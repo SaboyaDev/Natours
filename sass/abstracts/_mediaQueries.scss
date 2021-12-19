@@ -1,41 +1,28 @@
+@use './functions' as func;
+@use 'sass:math';
+
 //  MEDIA QUERY MANAGER
 /*
-	0 = 600px;			PHONE
-	600 - 900px;		TABLET PORTRAIT
-	900 - 1200px;		TABLET LANDSCAPE
-	[1200 - 1800px] NORMAL STYLE IS APPLIED
-	1800px - + 			BIG DESKTOP
+	// CONVERSION: 1em = 16px
+	0 = 600px;			$PHONE									--> 37.50em
+	600 - 900px;		$TAB-PORT								--> 56.25em
+	900 - 1200px;		$TAB-LAND								--> 75.00em
+	[1200 - 1800px] NORMAL STYLE IS APPLIED	--> DEFAULT
+	1800px - + 			$BIG-DESKTOP						--> 112.5em
 */
 
-$breakPoints: (
-	'sm': 600px,
-	'md': 900px,
-	'lg': 1200px,
-	'xl': 1800px // BIG DESKTOP,
-);
+$phone: 600px;
+$tab-port: 900px;
+$tab-land: 1200px;
+$big-desktop: 1800px;
 
 @mixin respond($breakpoint) {
-	// PHONE
-	@if $breakpoint == sm {
-		@media (max-width: map-get($breakPoints, 'sm')) {
+	@if $breakpoint <=$lg {
+		@media (max-width: func.em-converter($breakpoint)) {
 			@content;
 		}
-	}
-	// TABLET PORTRAIT
-	@if $breakpoint == md {
-		@media (max-width: map-get($breakPoints, 'md')) {
-			@content;
-		}
-	}
-	// TABLET LANDSCAPE
-	@if $breakpoint == lg {
-		@media (max-width: map-get($breakPoints, 'lg')) {
-			@content;
-		}
-	}
-	// BIG DESKTOP
-	@if $breakpoint == xl {
-		@media (max-width: 1800px) {
+	} @else if $breakpoint >= $xl {
+		@media (min-width: funct.em-converter($breakpoint)) {
 			@content;
 		}
 	}

@@ -35,11 +35,12 @@
   }
 }
 /*
-	0 = 600px;			PHONE
-	600 - 900px;		TABLET PORTRAIT
-	900 - 1200px;		TABLET LANDSCAPE
-	[1200 - 1800px] NORMAL STYLE IS APPLIED
-	1800px - + 			BIG DESKTOP
+	// CONVERSION: 1em = 16px
+	0 = 600px;			$PHONE									--> 37.50em
+	600 - 900px;		$TAB-PORT								--> 56.25em
+	900 - 1200px;		$TAB-LAND								--> 75.00em
+	[1200 - 1800px] NORMAL STYLE IS APPLIED	--> DEFAULT
+	1800px - + 			$BIG-DESKTOP						--> 112.5em
 */
 *,
 *::before,

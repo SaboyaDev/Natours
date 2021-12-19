@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/mediaQueries' as mq;
+@use '../abstracts/functions' as func;
 
 *,
 *::before,
@@ -13,7 +14,7 @@
 }
 
 html {
-	font-size: 62.5%;
+	font-size: func.base-font-size(10px);
 	scroll-behavior: smooth;
 }
 
