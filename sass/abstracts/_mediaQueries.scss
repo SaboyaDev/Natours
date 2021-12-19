@@ -1,4 +1,4 @@
-@use './functions' as func;
+@use './functions' as funct;
 @use 'sass:math';
 
 //  MEDIA QUERY MANAGER
@@ -11,17 +11,21 @@
 	1800px - + 			$BIG-DESKTOP						--> 112.5em
 */
 
+// ORDER OF WRITING MEDIA-QUERIES:
+// BASE + TYPOGRAPHY --> GENERAL LAYOUT --> GRID --> PAGE LAYOUT --> COMPONENTS
+
+$sm-phone: 400px;
 $phone: 600px;
 $tab-port: 900px;
 $tab-land: 1200px;
 $big-desktop: 1800px;
 
 @mixin respond($breakpoint) {
-	@if $breakpoint <=$lg {
-		@media (max-width: func.em-converter($breakpoint)) {
+	@if $breakpoint <=$tab-land {
+		@media (max-width: funct.em-converter($breakpoint)) {
 			@content;
 		}
-	} @else if $breakpoint >= $xl {
+	} @else if $breakpoint >= $big-desktop {
 		@media (min-width: funct.em-converter($breakpoint)) {
 			@content;
 		}

@@ -1,15 +1,21 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/mixins' as mix;
+@use '../abstracts/mediaQueries' as mq;
 
 .section-about {
-	padding: 25rem 0;
 	margin-top: -20vh;
+	padding: 25rem var.$left-right-padding-normal;
+
+	@include mq.respond(mq.$tab-port) {
+		margin: -15vh auto 10rem;
+		padding: 22rem var.$left-right-padding-large 15rem;
+	}
 }
 
 .section-features {
-	margin-top: -10rem;
 	position: relative;
-	padding: 20rem 0;
+	margin-top: -10rem;
+	padding: 20rem var.$left-right-padding-normal;
 	@include mix.bg-img-gradient(url(../img/nat-4.jpg));
 	transform: skewY(-7deg);
 
@@ -19,18 +25,26 @@
 }
 
 .section-tours {
-	padding: 25rem 0 15rem;
 	margin-top: -10rem;
+	padding: 25rem var.$left-right-padding-normal 15rem;
+
+	@include mq.respond(mq.$tab-port) {
+		padding-top: 20rem;
+	}
 }
 
 .section-stories {
 	position: relative;
-	padding: 15rem 0;
+	padding: 15rem var.$left-right-padding-normal;
 	background-color: rgba(var.$color-black, 0.7);
+
+	@include mq.respond(mq.$tab-port) {
+		padding-top: 10rem;
+	}
 }
 
 .section-booking {
-	padding: 15rem 0;
+	padding: 15rem var.$left-right-padding-normal;
 	background-image: linear-gradient(
 		to right bottom,
 		var.$color-primary-light,
@@ -51,8 +65,43 @@
 	border-radius: var.$small-border-radius;
 	box-shadow: 0 1.5rem 4rem rgba(var.$color-black, 0.3);
 
+	@include mq.respond(mq.$phone) {
+		height: 100%;
+	}
+
 	&__form {
 		width: 50%;
 		padding: 6rem;
+
+		@include mq.respond(mq.$phone) {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+main section[class^='section-'] {
+	@include mq.respond(mq.$tab-land) {
+		padding-right: var.$left-right-padding-large;
+		padding-left: var.$left-right-padding-large;
+	}
+}
+main section[class^='section-'] {
+	@include mq.respond(mq.$tab-port) {
+		padding-right: var.$left-right-padding-large;
+		padding-left: var.$left-right-padding-large;
+	}
+}
+
+main section[class^='section-'] {
+	@include mq.respond(mq.$phone) {
+		padding-right: var.$left-right-padding-small;
+		padding-left: var.$left-right-padding-small;
+	}
+}
+
+main section[class^='section-'] {
+	@include mq.respond(mq.$sm-phone) {
+		padding-right: var.$left-right-padding-xs;
+		padding-left: var.$left-right-padding-xs;
 	}
 }

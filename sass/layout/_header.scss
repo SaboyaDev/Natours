@@ -1,4 +1,5 @@
 @use '../abstracts/mixins' as mix;
+@use '../abstracts/mediaQueries' as mq;
 
 .header {
 	position: relative;
@@ -6,14 +7,24 @@
 	@include mix.bg-img-gradient(url(../img/hero.jpg));
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
 
+	@include mq.respond(mq.$tab-land) {
+		clip-path: polygon(0 0, 100% 0, 100% 82vh, 0% 100%);
+	}
+	@include mq.respond(mq.$tab-port) {
+		clip-path: polygon(0 0, 100% 0, 100% 85vh, 0% 100%);
+	}
+	@include mq.respond(mq.$phone) {
+		clip-path: polygon(0 0, 100% 0, 100% 85vh, 0% 100%);
+	}
+
 	&__logo-box {
 		position: absolute;
-		top: 4rem;
-		left: 4rem;
+		top: 6.1rem;
+		left: 5rem;
 	}
 
 	&__logo {
-		height: 3.5rem;
+		height: 4.5rem;
 	}
 
 	&__text-box {

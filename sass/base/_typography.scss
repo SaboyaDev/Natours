@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as var;
-@use '../abstracts/mixins';
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/mediaQueries' as mq;
 
 body {
 	font-family: 'Lato', sans-seriff;
@@ -21,6 +22,15 @@ body {
 		margin-right: -3.5rem;
 		text-align: right;
 		animation: fadein-left 1s ease-out;
+
+		@include mq.respond(mq.$phone) {
+			font-size: 5.9rem;
+			letter-spacing: 1rem;
+		}
+		@include mq.respond(mq.$sm-phone) {
+			font-size: 5rem;
+			letter-spacing: 1rem;
+		}
 	}
 	&--sub {
 		display: block;
@@ -29,6 +39,11 @@ body {
 		letter-spacing: 1.75rem;
 		margin-right: -1.75rem;
 		animation: fadein-right 1s ease-out;
+
+		@include mq.respond(mq.$phone) {
+			font-size: 1.7rem;
+			letter-spacing: 0.5rem;
+		}
 	}
 }
 
@@ -36,7 +51,7 @@ body {
 	font-size: 3.5rem;
 	text-transform: uppercase;
 	font-weight: 700;
-	@include mixins.text-gradient(
+	@include mix.text-gradient(
 		right,
 		var.$color-primary-light,
 		var.$color-primary-dark
@@ -44,9 +59,27 @@ body {
 	letter-spacing: 0.2rem;
 	transition: all 0.2s;
 
+	@include mq.respond(mq.$tab-land) {
+		font-size: 3.3rem;
+		letter-spacing: 0;
+	}
+
+	@include mq.respond(mq.$tab-port) {
+		font-size: 3rem;
+		letter-spacing: 0;
+	}
+	@include mq.respond(mq.$phone) {
+		font-size: 2.5rem;
+		letter-spacing: 0;
+	}
+
 	&:hover {
 		transform: skewY(2deg) skewX(15deg) scale(1.1);
 		text-shadow: 0.5rem 1rem 2rem rgba(var.$color-black, 0.2);
+
+		@include mq.respond(mq.$phone) {
+			transform: skewY(2deg) skewX(15deg) scale(1.05);
+		}
 	}
 }
 

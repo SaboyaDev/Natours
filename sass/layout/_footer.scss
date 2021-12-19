@@ -1,18 +1,37 @@
 @use '../abstracts/variables' as var;
+@use '../abstracts/mediaQueries' as mq;
 
 .footer {
 	background-color: var.$color-grey-dark-3;
-	padding: 10rem 0;
+	padding: 10rem var.$left-right-padding-normal;
 	font-size: var.$small-font-size;
 	color: var.$color-grey-light-1;
 
+	@include mq.respond(mq.$tab-port) {
+		padding: 7rem var.$left-right-padding-small 5rem;
+	}
+
+	& > .row {
+		@include mq.respond(mq.$tab-port) {
+			max-width: 80rem;
+		}
+	}
+
 	&__logo-box {
 		text-align: center;
+
+		@include mq.respond(mq.$tab-port) {
+			margin-bottom: 2rem;
+		}
 	}
 
 	&__logo {
 		width: 15rem;
 		height: auto;
+	}
+
+	#navigation-links {
+		margin-bottom: 1rem;
 	}
 
 	// NAVIGATION
@@ -21,10 +40,18 @@
 		display: inline-block;
 		border-top: 0.1rem solid var.$color-grey-dark;
 		padding-top: 2rem;
+
+		@include mq.respond(mq.$tab-port) {
+			border-top: none;
+			display: block;
+		}
 	}
 
 	&__list {
 		list-style: none;
+		@include mq.respond(mq.$tab-port) {
+			text-align: center;
+		}
 	}
 
 	&__item {
@@ -52,5 +79,16 @@
 
 	&__copyright {
 		float: right;
+		@include mq.respond(mq.$tab-port) {
+			float: none;
+			text-align: center;
+		}
+
+		& br,
+		& br:after {
+			@include mq.respond(mq.$tab-port) {
+				display: none;
+			}
+		}
 	}
 }

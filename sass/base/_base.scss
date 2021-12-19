@@ -1,6 +1,6 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/mediaQueries' as mq;
-@use '../abstracts/functions' as func;
+@use '../abstracts/functions' as funct;
 
 *,
 *::before,
@@ -14,8 +14,17 @@
 }
 
 html {
-	font-size: func.base-font-size(10px);
 	scroll-behavior: smooth;
+
+	// DEFINES WHAT 1rem IS BY USING THE BASE-FONT-SIZE FUNCTION
+	font-size: funct.base-font-size(10px);
+
+	@include mq.respond(mq.$tab-land) {
+		font-size: funct.base-font-size(9px);
+	}
+	@include mq.respond(mq.$tab-port) {
+		font-size: funct.base-font-size(8px);
+	}
 }
 
 body {
